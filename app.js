@@ -5,12 +5,22 @@ const code = process.argv[2];
 const isValid = validCodes.find(currency => currency === code) ? true : false;
 const url = `http://api.nbp.pl/api/exchangerates/rates/a/${code}/?format=json`;
 
-request(url, {
-  json: true
-}, (err, res, body) => {
-  setCorrectGrammar(body);
-  console.log(`Kurs ${body.currency} w dniu ${body.rates[0].effectiveDate} wynosi ${body.rates[0].mid}`);
-});
+if (isValid) {
+  request(url, {
+    json: true
+  }, (err, res, body) => {
+    if (res.statusCode !== 200) {
+      console.log("Błąd. Sprawdź url");
+    };
+    if (err) {
+      return console.log("Błąd :", err);
+    };
+
+    setCorrectGrammar(body);
+    console.log(`Kurs ${body.currency} w dniu ${body.rates[0].effectiveDate} wynosi ${body.rates[0].mid}`);
+  });
+}
+
 
 const setCorrectGrammar = body => {
   switch (process.argv[2]) {
