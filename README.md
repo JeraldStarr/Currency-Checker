@@ -3,7 +3,7 @@ Currency checker is a console application which allows checking middle exchange 
 
 You can check currencies rate by providing a command to your console:
 - <code>node app.js usd</code> to check USD
-- <code>node app.js eur</code> to check EUR
+- <code>node app.js chf</code> to check CHF
 - <code>node app.js gbp</code> to check GBP
 - <code>node app.js eur</code> to check EUR
 # Supported Platforms
