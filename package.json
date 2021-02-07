@@ -1,10 +1,14 @@
 {
   "name": "currency_checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "usd": "node app.js usd",
+    "chf": "node app.js chf",
+    "gbp": "node app.js gbp",
+    "eur": "node app.js eur"
   },
   "keywords": [],
   "author": "",
